@@ -1,5 +1,5 @@
 /*
-   Copyright (c) 2014, The Linux Foundation. All rights reserved.
+  Copyright (c) 2014, The Linux Foundation. All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -89,8 +89,19 @@ void vendor_load_properties()
 
     // sku
     std::string sku = android::base::GetProperty("ro.boot.hardware.sku", "");
-    property_override_dual("ro.product.model", "ro.vendor.product.model", sku.c_str());
-
+    if (sku == "XT1670") {
+    property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G5 (XT1670)");    
+    } else if (sku == "XT1671") {
+    property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G5 (XT1671)");
+    } else if (sku == "XT1672") {
+    property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G5 (XT1672)");
+    } else if (sku == "XT1675") {
+    property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G5 (XT1675)");
+    } else if (sku == "XT1676") {
+    property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G5 (XT1676)");
+    } else if (sku == "XT1677") {
+    property_override_dual("ro.product.model", "ro.vendor.product.model", "Moto G5 (XT1677)");
+    }
     // rmt_storage
     std::string device = android::base::GetProperty("ro.boot.device", "");
     std::string radio = android::base::GetProperty("ro.boot.radio", "");
